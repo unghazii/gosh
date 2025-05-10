@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }).catch(error => {
                 console.error("Audio playback failed:", error);
                 // Show notification that user needs to interact first
-                showNotification("Klik tombol musik untuk memulai lagu romantis kita", 5000);
+                showNotification("Klik tombol musik untuk memulai lagu", 5000);
             });
         }
         isPlaying = !isPlaying;
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         audioBtn.innerHTML = '<i class="fas fa-pause"></i>';
     }).catch(error => {
         console.log("Autoplay prevented. User must interact first.");
-        showNotification("Klik tombol musik untuk memulai lagu romantis kita", 5000);
+        showNotification("Klik tombol musik untuk memulai lagu", 5000);
     });
 
     // Back to Top Button

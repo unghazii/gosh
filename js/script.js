@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function createFloatingHearts() {
         const heartContainer = document.querySelector('.floating-hearts');
         const heartIcons = ['❤️', '💕', '💖', '💘', '💓', '💗', '💝'];
-        const numHearts = 8; // Lebih sedikit hati sekaligus
-        const maxHeartsOnScreen = 25; // Batas jumlah hati yang tampil bersamaan
+        const numHearts = 20; // Lebih sedikit hati sekaligus
+        const maxHeartsOnScreen = 30; // Batas jumlah hati yang tampil bersamaan
 
         for (let i = 0; i < numHearts; i++) {
             setTimeout(() => {
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Perbarui lebih jarang
-        setInterval(createFloatingHearts, 40000);
+        setInterval(createFloatingHearts, 20000);
     }
 
     // Notification function

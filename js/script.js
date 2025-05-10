@@ -93,43 +93,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Floating Hearts Animation
     createFloatingHearts();
-    
+
     function createFloatingHearts() {
         const heartContainer = document.querySelector('.floating-hearts');
         const heartIcons = ['❤️', '💕', '💖', '💘', '💓', '💗', '💝'];
-        const numHearts = 15;
-        
+        const numHearts = 8; // Lebih sedikit hati sekaligus
+        const maxHeartsOnScreen = 25; // Batas jumlah hati yang tampil bersamaan
+
         for (let i = 0; i < numHearts; i++) {
             setTimeout(() => {
+                // Cek jumlah hati saat ini
+                if (heartContainer.querySelectorAll('.floating-heart').length >= maxHeartsOnScreen) return;
+
                 const heart = document.createElement('div');
                 heart.classList.add('floating-heart');
-                
-                // Random heart icon
+
                 const randomIcon = heartIcons[Math.floor(Math.random() * heartIcons.length)];
                 heart.innerHTML = randomIcon;
-                
-                // Random position, scale and animation duration
+
                 const posX = Math.random() * 100;
                 const scale = 0.5 + Math.random() * 1.5;
                 const duration = 5 + Math.random() * 10;
-                
+
                 heart.style.left = `${posX}%`;
                 heart.style.fontSize = `${scale}rem`;
                 heart.style.animationDuration = `${duration}s`;
-                
-                // Add heart to container
+
                 heartContainer.appendChild(heart);
-                
-                // Remove heart after animation is complete
+
                 setTimeout(() => {
                     heart.remove();
                 }, duration * 1000);
-                
-            }, i * 3000); // Stagger heart creation
+            }, i * 2000); // Lebih jarang muncul
         }
-        
-        // Create hearts periodically
-        setInterval(createFloatingHearts, 30000);
+
+        // Perbarui lebih jarang
+        setInterval(createFloatingHearts, 40000);
     }
 
     // Notification function

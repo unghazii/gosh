@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     audioBtn.addEventListener('click', toggleAudio);
     
     // Try to autoplay (might be blocked by browser)
-    bgMusic.volume = 0.5; // Set volume to 50%
+    bgMusic.volume = 0.7; // Set volume to 50%
     bgMusic.play().then(() => {
         isPlaying = true;
         audioBtn.classList.add('playing');
